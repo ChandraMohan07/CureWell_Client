@@ -1,0 +1,25 @@
+  .div-pos {
+    position: relative;
+  }
+  
+  .le {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+  }
+  
+  .re {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+  }
+
+  .middle{
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    top: 0;
+    padding: 10px;
+  }
