@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import jwtDecode, { JwtDecodeOptions } from 'jwt-decode';
 import { DoctorsService } from '../shared/doctors.service';
 import { LogService } from '../shared/log.service';
+import * as alertify from 'alertifyjs';
 
 
 @Component({

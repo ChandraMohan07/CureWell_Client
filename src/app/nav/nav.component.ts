@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import * as alertify from 'alertifyjs';
 
 
 @Component({
@@ -13,7 +14,9 @@ export class NavComponent {
 
   logo='assets/images/logo.jfif';
   logOut = () => {
-    localStorage.removeItem("jwt");
-    this.router.navigate(['/']);
+    alertify.confirm("Are sure U want to Logout",()=>{
+      localStorage.removeItem("jwt");
+      this.router.navigate(['/']);
+    },function(){})
   }
 }
