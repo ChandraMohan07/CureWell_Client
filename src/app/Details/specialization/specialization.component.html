@@ -1,9 +1,9 @@
 <div class="container-fluid vh-100">
   <app-nav></app-nav>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col d-flex flex-column align-items-center justify-content-center">
-      <div><h1>Welcome to Doctors Section</h1></div>
       <div *ngIf="!clicked">
+        <div class="text-center"><h1>Specializations</h1></div>
         <table class="table text-center table-hover table-dark">
           <thead>
             <tr>
@@ -16,16 +16,21 @@
             <tr *ngFor="let s of specService.specList.slice((currentPage-1)*recordsPerPage, currentPage*recordsPerPage)">
               <td>{{s.specializationCode}}</td>
               <td>{{s.specializationName}}</td>
-              <td (click)="docClick(s)"><button>Get Doctors</button></td>
+              <td (click)="docClick(s)"><button class="btn btn-info" type="button">Get Doctors</button></td>
             </tr>
           </tbody>
         </table>
-        <div class="text-center">
-          <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
-          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=specService.specList.length">Next</button>
+        <div class="div-pos">
+          <button class="btn btn-primary le" (click)="prevPage()" [disabled]="currentPage===1">
+            Previous<i class="bi bi-chevron-compact-left"></i>
+          </button>
+          <button class="btn btn-primary re" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=specService.specList.length">
+            Next<i class="bi bi-chevron-compact-right"></i>
+          </button>
         </div>
       </div>
       <div *ngIf="clicked">
+        <div class="text-center"><h1>Doctors</h1></div>
         <table class="table text-center table-hover table-dark">
           <thead>
             <tr>
@@ -40,12 +45,14 @@
             </tr>
           </tbody>
         </table>
-        <div class="text-center">
-          <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
-          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=docSpecService.docList.length">
-            Next
+        <div class="div-pos">
+          <button class="btn btn-primary le" (click)="prevPage()" [disabled]="currentPage===1">
+            Previous<i class="bi bi-chevron-compact-left"></i>
           </button>
-          <button class="btn btn-primary btn-large" (click)="GoBack()">Cancel</button>
+          <button class="btn btn-primary re" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=docSpecService.docList.length">
+            Next<i class="bi bi-chevron-compact-right"></i>
+          </button>
+          <button class="btn btn-primary mt-5 middle" (click)="GoBack()">Cancel</button>
         </div>
       </div>
     </div>

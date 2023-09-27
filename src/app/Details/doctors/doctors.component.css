@@ -49,4 +49,22 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  .div-pos {
+    position: relative;
+  }
+  
+  .le {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+  }
+  
+  .re {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+  }
   

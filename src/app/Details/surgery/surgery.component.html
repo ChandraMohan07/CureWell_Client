@@ -24,15 +24,19 @@
               <td>{{s.startTime}}</td>
               <td>{{s.endTime}}</td>
               <td>{{s.surgeryCategory}}</td>
-              <td><button type="button" (click)="edit(s)">Update Surgery Time</button>
-                <button type="button" (click)="del(s.surgeryId)">Delete</button>
+              <td><button class="btn btn-warning m-1" type="button" (click)="edit(s)">Update Surgery Time</button>
+                <button class="btn btn-danger" type="button" (click)="del(s.surgeryId)"><i class="bi bi-trash"></i></button>
               </td>
             </tr>
           </tbody>
         </table>
-        <div class="text-center">
-          <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
-          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=objService.surgeriesList.length">Next</button>
+        <div class="div-pos">
+          <button class="btn btn-primary le" (click)="prevPage()" [disabled]="currentPage===1">
+            Previous<i class="bi bi-chevron-compact-left"></i>
+          </button>
+          <button class="btn btn-primary re" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=objService.surgeriesList.length">
+            Next<i class="bi bi-chevron-compact-right"></i>
+          </button>
         </div>
       </div>
       <div *ngIf="clicked">
@@ -79,8 +83,8 @@
             <div *ngIf="SurgeryCategory.invalid && SurgeryCategory.touched" class="bg-warning">
               Please Enter the Category</div>
           </div>
-          <div class="form-group">
-              <button class="btn btn-primary btn-large" type="submit" [disabled]="form.invalid">
+          <div class="form-group m-1">
+              <button class="btn btn-primary btn-large m-2" type="submit" [disabled]="form.invalid">
                   <i class="fa fa-database"></i>
                   Update Data
               </button>
