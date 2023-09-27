@@ -1,3 +1,8 @@
 .gradient-bg{
     background: linear-gradient(to bottom,#F79D84,#ca6cefaa);
+} 
+
+.login-form{
+    background-color:white;
+    border-radius: 20px;
 }
