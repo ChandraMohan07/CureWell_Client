@@ -13,10 +13,9 @@ export class NavComponent {
   constructor(private jwtHelper: JwtHelperService,private router: Router) { }
 
   logo='assets/images/logo.jfif';
-  logOut = () => {
-    alertify.confirm("Are sure U want to Logout",()=>{
-      localStorage.removeItem("jwt");
-      this.router.navigate(['/']);
-    },function(){})
+  
+  logOut(){
+    localStorage.removeItem("jwt");
+    this.router.navigate(['/']);
   }
 }

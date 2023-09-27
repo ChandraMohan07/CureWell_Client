@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LogService } from '../shared/log.service';
 import { NgForm } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  constructor(public objService:LogService){}
+  constructor(public objService:LogService,private router:Router){}
   ngOnInit(){
     this.resetForm();
   }
@@ -29,5 +30,9 @@ export class RegisterComponent {
       },
       err=>{alert("Error "+err);
     })
+  }
+
+  redirectToLogin(){
+    this.router.navigate(['/login']);
   }
 }
