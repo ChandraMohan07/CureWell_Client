@@ -9,14 +9,19 @@ import { Specializations } from './specializations.model';
 })
 export class DoctorSpecializationsService {
   constructor(private objHttp:HttpClient) { }
-  apiUrl:string="http://localhost:5001/api/DoctorSpecializations/GetDoctorsBySpecialization";
+  apiUrl:string="http://localhost:5001/api/DoctorSpecializations";
   docList:Doctors[];
+  dsList:DoctorSpecializations[];
+  dsData:DoctorSpecializations=new DoctorSpecializations();
 
   data:number=0;
   docSpecializationsList(code){
-    this.objHttp.get(this.apiUrl+'/'+code).toPromise().then((res)=>{
+    this.objHttp.get(this.apiUrl+'/GetDoctorsBySpecialization'+code).toPromise().then((res)=>{
       this.docList=res as Doctors[]
     });
   }
 
+  addDocSpecialization(){
+    return this.objHttp.post(this.apiUrl+'/AddDoctorSpecialization',this.dsData);
+  }
 }
