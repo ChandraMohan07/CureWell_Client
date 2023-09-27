@@ -53,6 +53,7 @@ export class DoctorsComponent implements OnInit {
         this.resetForm();
         this.objService.getDoctorList();
         alert("Data Successfully Updated!");
+        this.clicked=false;
       },
       err=>{alert("Error "+err);
     })
