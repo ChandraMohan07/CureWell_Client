@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http'
 import { DoctorsService } from 'src/app/shared/doctors.service';
 import { NgForm } from '@angular/forms';
 import { Doctors } from 'src/app/shared/doctors.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctors',
@@ -11,14 +12,16 @@ import { Doctors } from 'src/app/shared/doctors.model';
 })
 export class DoctorsComponent implements OnInit {
 
-  constructor(public objService:DoctorsService){}
+  constructor(public objService:DoctorsService,private router:Router){}
   dList:string;
   ngOnInit():void{
     this.objService.getDoctorList();
   }
 
   doctor:Doctors;
+
   clicked:boolean=false;
+  
   edit(d){
     this.doctor=d;
     this.clicked=true;
@@ -53,5 +56,8 @@ export class DoctorsComponent implements OnInit {
       },
       err=>{alert("Error "+err);
     })
+  }
+  GoBack(){
+    this.clicked=false;
   }
 }

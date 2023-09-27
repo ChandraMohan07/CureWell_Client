@@ -21,6 +21,7 @@ import { AddSpecializationComponent } from './Details/add-specialization/add-spe
 import { RegisterComponent } from './register/register.component';
 
 
+
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
 }
