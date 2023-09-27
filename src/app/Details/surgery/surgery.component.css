@@ -1,0 +1,16 @@
+.even{
+    display: block;
+    background-color: rgb(57, 57, 57);
+    height: 35px;
+    text-align: center;
+    font-size: larger;
+    color: lightgoldenrodyellow;
+}
+.odd{
+    display: block;
+    background-color: rgb(67, 67, 67);
+    height: 35px;
+    text-align: center;
+    font-size: larger;
+    color: lightgoldenrodyellow;
+}

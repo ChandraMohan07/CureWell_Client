@@ -1,0 +1,50 @@
+<div class="container-fluid vh-100">
+  <app-nav></app-nav>
+  <div class="row">
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+      <div><h1>Welcome to Doctors Section</h1></div>
+      <div *ngIf="!clicked">
+        <table class="table text-center table-hover table-dark">
+          <thead>
+            <tr>
+              <th>Specialization Code</th>
+              <th>Specialization Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of specService.specList.slice((currentPage-1)*recordsPerPage, currentPage*recordsPerPage)">
+              <td>{{s.specializationCode}}</td>
+              <td>{{s.specializationName}}</td>
+              <td (click)="docClick(s)"><button>Get Doctors</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
+          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=specService.specList.length">Next</button>
+        </div>
+      </div>
+      <div *ngIf="clicked">
+        <table class="table text-center table-hover table-dark">
+          <thead>
+            <tr>
+              <th>Doctor ID</th>
+              <th>Doctor Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ds of docSpecService.docList.slice((currentPage-1)*recordsPerPage, currentPage*recordsPerPage)">
+              <td>{{ds.doctorId}}</td>
+              <td>{{ds.doctorName}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
+          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=docSpecService.docList.length">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid sticky-top">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark w-100">
+      <div class="d-flex mar">
+        <img src="{{logo}}" class="img-fluid rounded-circle">
+        <a class="navbar-brand text-white w-25 text-center mar" routerLink="/">
+          <p class="h2" ngbTooltip="CureWell Welcomes You">CureWell</p>
+        </a>
+      </div>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item m-2" ngbTooltip="Check the doctors related data here">
+            <a class="nav-link text-white" routerLink="/doctor">View Doctors</a>
+          </li>
+          <li class="nav-item m-2" ngbTooltip="Check the surgeries related data here">
+            <a class="nav-link text-white" routerLink="/surgery">View Today's Surgeries</a>
+          </li>
+          <li class="nav-item m-2" ngbTooltip="Check the specialization's related data here">
+            <a class="nav-link text-white" routerLink="/specialization">View Specializations</a>
+          </li>
+          <li class="nav-item m-2" ngbTooltip="Add a new doctor">
+            <a class="nav-link text-white" routerLink="/doctorAdd">Add Doctor</a>
+          </li>
+          <li class="nav-item m-2" ngbTooltip="Logout from the session!">
+            <a class="nav-link text-white" (click)="logOut()">Logout <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container-fluid vh-100">
+  <app-nav></app-nav>
+  <div class="row">
+    <div class="col d-flex flex-column align-items-center justify-content-center">
+      <div><h1>Welcome to Doctors Section</h1></div>
+      <div *ngIf="!clicked && objService.doctorList">
+        <table class="table text-center table-hover table-dark text-center">
+          <thead>
+            <tr class="text-white">
+              <th>Doctor ID</th>
+              <th>Doctor Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let d of objService.doctorList.slice((currentPage-1)*recordsPerPage, currentPage*recordsPerPage)">
+              <td>{{d.doctorId}}</td>
+              <td>{{d.doctorName}}</td>
+              <td><button type="button" (click)="edit(d)">Edit Doctor</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
+          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=objService.doctorList.length">Next</button>
+        </div>
+      </div>
+      <div *ngIf="clicked">
+        <form #form="ngForm" autocomplete="off" (submit)="updateRecord(form)">
+          <div class="form-group">
+            <label for="dId">Doctor Id</label>
+            <input name="DoctorId" id="dId" #DoctorId="ngModel" [(ngModel)]="objService.doctorData.doctorId"
+            class="form-control" placeholder="Id" readonly required>
+            <div *ngIf="DoctorId.invalid && DoctorId.touched" class="bg-warning">
+              Please Enter the Id</div>
+          </div>
+          <div class="form-group">
+            <label for="dName">Name</label>
+            <input name="DoctorName" id="dName" #DoctorName="ngModel" [(ngModel)]="objService.doctorData.doctorName"
+            class="form-control" placeholder="Name" required>
+            <div *ngIf="DoctorName.invalid && DoctorName.touched" class="bg-warning">
+              Please Enter the Name</div>
+          </div>
+          <div class="form-group">
+              <button class="btn btn-primary btn-large" type="submit" [disabled]="form.invalid">
+                  <i class="fa fa-database"></i>
+                  Update Data
+              </button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

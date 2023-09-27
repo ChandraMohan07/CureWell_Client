@@ -1,0 +1,25 @@
+<div class="container-fluid vh-100">
+    <app-nav></app-nav>
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center justify-content-center">
+        <div><h1>Welcome to Doctors</h1></div>
+        <div>
+          <form #form="ngForm" autocomplete="off" (submit)="insertRecord(form)">
+            <div class="form-group">
+              <label for="dName">Name</label>
+              <input name="DoctorName" id="dName" #DoctorName="ngModel" [(ngModel)]="objService.doctorData.doctorName"
+              class="form-control" placeholder="Name" required>
+              <div *ngIf="DoctorName.invalid && DoctorName.touched" class="bg-warning">
+                Please Enter the Name</div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-large" type="submit" [disabled]="form.invalid">
+                    <i class="fa fa-database"></i>
+                    Update Data
+                </button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+</div>
