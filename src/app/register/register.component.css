@@ -1,0 +1,26 @@
+.container{
+    border-radius: 20px;
+    margin-top: 50px;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   height: 500px;
+   width: 400px; 
+   background-color:rgb(87, 161, 252); 
+   
+}
+
+.containerreg{   
+    position: relative;
+    /* margin-top: 150px; */
+    overflow: hidden;
+    width: 300px;
+    height:400px ;
+    background-color:rgb(74, 72, 222); 
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0,0,0, 0.3);  
+}
+
+h1{
+    color: white;
+}
