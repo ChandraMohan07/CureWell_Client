@@ -19,6 +19,7 @@ import { AddDoctorComponent } from './Details/add-doctor/add-doctor.component';
 import { AddSurgeryComponent } from './Details/add-surgery/add-surgery.component';
 import { AddSpecializationComponent } from './Details/add-specialization/add-specialization.component';
 import { RegisterComponent } from './register/register.component';
+import { AddDetailsComponent } from './add-details/add-details.component';
 
 
 
@@ -38,7 +39,8 @@ export function tokenGetter() {
     AddDoctorComponent,
     AddSurgeryComponent,
     AddSpecializationComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddDetailsComponent
   ],
   imports: [
     BrowserModule,
