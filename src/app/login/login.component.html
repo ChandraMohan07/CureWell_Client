@@ -1,9 +1,9 @@
 <div class="d-flex align-items-center gradient-bg vh-100">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-4 text-center">
+      <div class=" col-4 text-center">
         <img src="{{logo}}" class="img-fluid rounded-circle m-1">
-        <form #loginForm="ngForm" class="border border-dark rounded-top" (ngSubmit)="login(loginForm)">
+        <form #loginForm="ngForm" class="login-form border border-dark rounded-top" (ngSubmit)="login(loginForm)">
           <h2 class="form-signin-heading text-center text-white m-0 p-1 bg-dark">Login</h2>
           <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
           <div class="form-group m-2">
