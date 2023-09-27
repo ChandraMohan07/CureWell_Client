@@ -16,6 +16,9 @@ import { NavComponent } from './nav/nav.component';
 import { SurgeryComponent } from './Details/surgery/surgery.component';
 import { SpecializationComponent } from './Details/specialization/specialization.component';
 import { AddDoctorComponent } from './Details/add-doctor/add-doctor.component';
+import { AddSurgeryComponent } from './Details/add-surgery/add-surgery.component';
+import { AddSpecializationComponent } from './Details/add-specialization/add-specialization.component';
+import { RegisterComponent } from './register/register.component';
 
 
 export function tokenGetter() { 
@@ -31,7 +34,10 @@ export function tokenGetter() {
     NavComponent,
     SurgeryComponent,
     SpecializationComponent,
-    AddDoctorComponent
+    AddDoctorComponent,
+    AddSurgeryComponent,
+    AddSpecializationComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

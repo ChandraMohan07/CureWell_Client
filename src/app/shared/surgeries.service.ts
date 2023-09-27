@@ -12,6 +12,9 @@ export class SurgeriesService {
   surgeriesList:Surgeries[];
   surgeryData:Surgeries=new Surgeries();
 
+  addSurgery(){
+    return this.objHttp.post(this.apiUrl+'/AddSurgery',this.surgeryData);
+  }
   updateSurgery(){
     return this.objHttp.put(this.apiUrl+'/UpdateSurgery',this.surgeryData);
   }
