@@ -27,6 +27,7 @@ export class RegisterComponent {
       {
         this.resetForm(form);
         alert("User Successfully Added!");
+       this.router.navigate(['/login'])
       },
       err=>{alert("Error "+err);
     })
