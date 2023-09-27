@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit{
         next: (response: AuthenticatedResponse) => {
           const token = response.token;
           localStorage.setItem("jwt", token); 
-          alert("Login Successfull");
           this.invalidLogin = false; 
           this.router.navigate(["/"]);
+          alert("Login Successfull");
         },
         error: (err: HttpErrorResponse) => this.invalidLogin = true
       })
