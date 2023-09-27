@@ -1,8 +1,8 @@
 <div class="container-fluid vh-100">
   <app-nav></app-nav>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col d-flex flex-column align-items-center justify-content-center">
-      <div><h1>Welcome to Doctors Section</h1></div>
+      <div><h1>Doctors</h1></div>
       <div *ngIf="!clicked && objService.doctorList">
         <table class="table text-center table-hover table-dark text-center">
           <thead>
@@ -16,7 +16,9 @@
             <tr *ngFor="let d of objService.doctorList.slice((currentPage-1)*recordsPerPage, currentPage*recordsPerPage)">
               <td>{{d.doctorId}}</td>
               <td>{{d.doctorName}}</td>
-              <td><button type="button" (click)="edit(d)">Edit Doctor</button></td>
+              <td><button class="btn btn-warning m-1" type="button" (click)="edit(d)">Edit Doctor</button>
+                  <button class="btn btn-danger" type="button" (click)="del(d.doctorId)"><i class="bi bi-trash"></i></button>
+              </td>
             </tr>
           </tbody>
         </table>

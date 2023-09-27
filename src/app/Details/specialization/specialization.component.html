@@ -42,7 +42,10 @@
         </table>
         <div class="text-center">
           <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
-          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=docSpecService.docList.length">Next</button>
+          <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage*recordsPerPage>=docSpecService.docList.length">
+            Next
+          </button>
+          <button class="btn btn-primary btn-large" (click)="GoBack()">Cancel</button>
         </div>
       </div>
     </div>

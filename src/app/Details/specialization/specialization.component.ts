@@ -33,4 +33,8 @@ export class SpecializationComponent {
     this.clicked=true;
     this.docSpecService.docSpecializationsList(spec.specializationCode);
   }
+
+  GoBack(){
+    this.clicked=false;
+  }
 }

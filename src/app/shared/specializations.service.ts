@@ -8,11 +8,15 @@ import { Specializations } from './specializations.model';
 export class SpecializationsService {
 
   constructor(private objHttp:HttpClient) { }
-  apiUrl:string="http://localhost:5001/api/Specializations/GetAllSpecializations";
+  apiUrl:string="http://localhost:5001/api/Specializations";
   specList:Specializations[];
+  specData:Specializations=new Specializations();
 
   specializationsList(){
-    this.objHttp.get(this.apiUrl).toPromise().then(res=>this.specList=res as Specializations[]);
+    this.objHttp.get(this.apiUrl+'/GetAllSpecializations').toPromise().then(res=>this.specList=res as Specializations[]);
   }
 
+  addSpecialization(){
+    return this.objHttp.post(this.apiUrl+'/AddSpecializations',this.specData);
+  }  
 }

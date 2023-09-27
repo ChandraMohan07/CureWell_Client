@@ -11,7 +11,6 @@ export class DoctorSpecializationsService {
   constructor(private objHttp:HttpClient) { }
   apiUrl:string="http://localhost:5001/api/DoctorSpecializations/GetDoctorsBySpecialization";
   docList:Doctors[];
-  specData:Specializations=new Specializations();
 
   data:number=0;
   docSpecializationsList(code){
@@ -20,7 +19,4 @@ export class DoctorSpecializationsService {
     });
   }
 
-  addSpecialization(){
-    return this.objHttp.post(this.apiUrl+'/AddSpecializations',this.specData);
-  }  
 }

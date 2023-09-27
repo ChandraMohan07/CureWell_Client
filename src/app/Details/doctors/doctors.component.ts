@@ -61,4 +61,14 @@ export class DoctorsComponent implements OnInit {
   GoBack(){
     this.clicked=false;
   }
+
+  del(id){
+    this.objService.deleteDoctor(id).subscribe(res=>
+      {
+        this.objService.getDoctorList();
+        alert("Doctor Removed!");
+      },
+      err=>{alert("Error "+err);
+    })
+  }
 }

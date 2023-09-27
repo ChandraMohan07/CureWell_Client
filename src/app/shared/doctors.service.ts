@@ -17,7 +17,7 @@ export class DoctorsService {
     return this.objHttp.post(this.apiUrl+'/AddDoctor',this.doctorData);
   }
   deleteDoctor(id){
-    return this.objHttp.delete(this.apiUrl+'/DeleteDoctor'+id);
+    return this.objHttp.delete(this.apiUrl+'/DeleteDoctor'+'/'+id);
   }
   updateDoctor(){
     return this.objHttp.put(this.apiUrl+'/UpdateDoctor',this.doctorData);

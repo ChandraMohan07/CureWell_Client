@@ -11,6 +11,7 @@ import { AddDoctorComponent } from './Details/add-doctor/add-doctor.component';
 import { AddSurgeryComponent } from './Details/add-surgery/add-surgery.component';
 import { AddSpecializationComponent } from './Details/add-specialization/add-specialization.component';
 import { RegisterComponent } from './register/register.component';
+import { AddDetailsComponent } from './add-details/add-details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'userAdd',component:RegisterComponent},
   {path:'doctor',component: DoctorsComponent, canActivate: [AuthGuard]},
   {path:'surgery',component: SurgeryComponent, canActivate: [AuthGuard]},
+  {path:'addDetails',component: AddDetailsComponent, canActivate: [AuthGuard]},
   {path:'specialization',component: SpecializationComponent, canActivate: [AuthGuard]},
   {path:'doctorAdd',component:AddDoctorComponent,canActivate: [AuthGuard]},
   {path:'surgeryAdd',component:AddSurgeryComponent,canActivate: [AuthGuard]},

@@ -48,11 +48,23 @@ export class SurgeryComponent {
   updateRecord(form:NgForm){
     this.objService.updateSurgery().subscribe(res=>
       {
-        this.resetForm();
+        form.reset();
         this.objService.surgeryList();
         alert("Data Successfully Updated!");
       },
       err=>{alert("Error "+err);
     })
+  }
+  del(id){
+    this.objService.deleteSurgery(id).subscribe(res=>
+      {
+        this.objService.surgeryList();
+        alert("Surgery Removed!");
+      },
+      err=>{alert("Error "+err);
+    })
+  }
+  GoBack(){
+    this.clicked=false;
   }
 }

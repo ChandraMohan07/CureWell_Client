@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DoctorSpecializationsService } from 'src/app/shared/doctor-specializations.service';
+import { SpecializationsService } from 'src/app/shared/specializations.service';
 
 @Component({
   selector: 'app-add-specialization',
@@ -9,7 +10,7 @@ import { DoctorSpecializationsService } from 'src/app/shared/doctor-specializati
 })
 export class AddSpecializationComponent {
   
-  constructor(public objService:DoctorSpecializationsService){}
+  constructor(public objService:SpecializationsService){}
   ngOnInit(){
     this.resetForm();
   }

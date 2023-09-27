@@ -4,3 +4,9 @@ img{
 .mar{
     margin-left: 10px;
 }
+.navbar{
+    background: rgb(2, 103, 108);
+}
+a:hover{
+    font-size: 20px;
+}

@@ -16,7 +16,7 @@ export class SurgeriesService {
     return this.objHttp.post(this.apiUrl+'/AddSurgery',this.surgeryData);
   }
   deleteSurgery(id){
-    return this.objHttp.delete(this.apiUrl+'/DeleteSurgery'+id);
+    return this.objHttp.delete(this.apiUrl+'/DeleteSurgery'+'/'+id);
   }
   updateSurgery(){
     return this.objHttp.put(this.apiUrl+'/UpdateSurgery',this.surgeryData);
